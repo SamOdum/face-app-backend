@@ -64,3 +64,5 @@ typings/
 storeRoom.js
 init.pgsql
 init.sql
+scripts/
+sql/
