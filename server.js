@@ -11,7 +11,7 @@ const App = express();
 App.use(express.json({ extended: false }));
 const isProduction = process.env.NODE_ENV === 'production';
 const origin = {
-  origin: isProduction ? 'https://www.heroku.com' : '*', // < ** UPDATE THIS LINE WHEN FRONTEND URL READY
+  origin: isProduction ? 'https://smart-face-app.netlify.app' : '*', // < ** UPDATE THIS LINE WHEN FRONTEND URL READY
 };
 
 const limiter = rateLimit({
