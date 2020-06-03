@@ -28,10 +28,10 @@ const Users = {
    */
   async create(req, res) {
     const { password1, password2 } = req.body;
-    if(password1 !== password2 ) return res.status(400).json({ status: 'error', data: { message: 'passwords must match' } });
-      
+    if (password1 !== password2) return res.status(400).json({ status: 'error', data: { message: 'passwords must match' } });
+
     const Hashedpassword = Helper.hashPassword(password1);
-    const values = [req.body.name, req.body.email, Hashedpassword ];
+    const values = [req.body.name, req.body.email, Hashedpassword];
 
     try {
       const { rows } = await db.query(Users.query.createUser, values);
@@ -53,8 +53,8 @@ const Users = {
    */
   async delete(req, res) {
     const userId = req.body.userUniqueId;
-    const findQuery = Employees.query.findUser;
-    const deleteQuery = Employees.query.deleteUser;
+    const findQuery = Users.query.findUser;
+    const deleteQuery = Users.query.deleteUser;
     try {
       const { rows } = await db.query(findQuery, [userId]);
       if (!rows[0]) {

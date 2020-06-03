@@ -28,7 +28,7 @@ App.use(helmet());
 App.use('/api', require('./routes/routes'));
 
 App.get('/', (req, res) => {
-  res.status(200).json({ message: 'Welcome to Teamwork API.' });
+  res.status(200).json({ message: 'Welcome to FaceApp API.' });
 });
 
 // **Initialize port & server**
